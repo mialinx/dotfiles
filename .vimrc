@@ -1,4 +1,6 @@
 syntax on
+set t_Co=256
+colorschem molokai
 set nocompatible
 set backspace=indent,eol,start
 set ruler
@@ -12,8 +14,6 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set list
-set path=.,/usr/lib/python2.7/site-packages/,/usr/lib/python2.7/
-set includeexpr=substitute(substitute(v:fname,'\\.','/','g'),'$','.py','g')
 set lcs=tab:\|.   "show tabs
 set fileencodings=ucs-bom,utf-8,cp1251,default,latin1
 set history=50
@@ -29,6 +29,8 @@ set backupdir=~/.vim/backup
 set cpt-=t             
 set dir=~/.vim/swap    
 
+set path=.,/usr/lib/python2.7/site-packages/,/usr/lib/python2.7/
+set includeexpr=substitute(substitute(v:fname,'\\.','/','g'),'$','.py','g')
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
