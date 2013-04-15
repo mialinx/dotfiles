@@ -42,12 +42,6 @@ au BufReadPost *
 
 au BufNewFile,BufRead *.tpl set ft=tt2
 
-" Perl features
-let &path=system('perl -e "print join \",\" => @INC"')
-set path+=.,$PATH_PRJ/bin,$PATH_PRJ/tpl,$PATH_PRJ/lib/,$PATH_PRJ/../CPB/lib/"
-set isfname=@,48-57,/,.,_,+,,,#,$,%,~,=,:
-set includeexpr=substitute(substitute(v:fname,'::','/','g'),'$','.pm','')
-
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
