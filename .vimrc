@@ -29,8 +29,8 @@ set backupdir=~/.vim/backup
 set cpt-=t             
 set dir=~/.vim/swap    
 
-set path=.,/usr/lib/python2.7/site-packages/,/usr/lib/python2.7/
-set includeexpr=substitute(substitute(v:fname,'\\.','/','g'),'$','.py','g')
+"set path=.,/usr/lib/python2.7/site-packages/,/usr/lib/python2.7/
+"set includeexpr=substitute(substitute(v:fname,'\\.','/','g'),'$','.py','g')
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
