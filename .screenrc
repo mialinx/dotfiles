@@ -1,1 +1,6 @@
-term screen-256color
+defutf8 on
+deflogin on
+defscrollback 10000
+startup_message off
+defbce on
+altscreen on
