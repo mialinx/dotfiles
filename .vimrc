@@ -45,12 +45,6 @@ au BufNewFile,BufRead *.tpl set ft=tt2
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
-imap <Up> <nop>
-imap <Down> <nop>
-imap <Left> <nop>
-imap <Right> <nop>
-map <Up> <nop>
-map <Down> <nop>
-map <Left> <nop>
-map <Right> <nop>
-map <F10> :q<Enter>
+map <F10> :qa<Enter>
+
+execute pathogen#infect()
