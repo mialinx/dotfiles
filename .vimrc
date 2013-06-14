@@ -47,4 +47,23 @@ au BufNewFile,BufRead *.tpl set ft=tt2
 inoremap <C-U> <C-G>u<C-U>
 map <F10> :qa<Enter>
 
+map <Leader>1 :b1<Enter>
+map <Leader>2 :b2<Enter>
+map <Leader>3 :b3<Enter>
+map <Leader>4 :b4<Enter>
+map <Leader>5 :b5<Enter>
+map <Leader>6 :b6<Enter>
+map <Leader>7 :b7<Enter>
+map <Leader>8 :b8<Enter>
+map <Leader>9 :b9<Enter>
+map <Leader><Left> :bp<Enter>
+map <Leader>h :bp<Enter>
+map <Leader><Right> :bn<Enter>
+map <Leader>l :bn<Enter>
+map <Leader>t :NERDTreeToggle<Enter>
+
+" plugin customization
 execute pathogen#infect()
+let g:miniBufExplMaxSize=1
+let NERDTreeHightlightCursorline=1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
