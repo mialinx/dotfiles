@@ -65,4 +65,6 @@ map <silent> <Leader>t :NERDTreeToggle<Enter>
 execute pathogen#infect()
 let g:miniBufExplMaxSize=1
 let NERDTreeHightlightCursorline=1
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd BufNewFile,BufRead *.psgi setf perl
+
