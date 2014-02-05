@@ -926,7 +926,7 @@ endfunction
 " buffer 1's path at the point where it is different from buffer 2's path
 "
 function! CheckRootDirForDupes(level,path1,path2)
-    call <SID>DEBUG('Entering Dupe Dir Checking Function for at level '.a:level.' for '.join(a:path3).' vs '.join(a:path2),10)
+    call <SID>DEBUG('Entering Dupe Dir Checking Function for at level '.a:level.' for '.join(a:path2).' vs '.join(a:path1),10)
     if(len(a:path1) >= <SID>Abs(a:level))
         call <SID>DEBUG('Path level1 is '.get(a:path1,a:level),10)
         call <SID>DEBUG('Path level2 is '.get(a:path2,a:level),10)
