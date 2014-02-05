@@ -2,7 +2,7 @@
 "
 " HINT: Type zR if you don't know how to use folds
 "
-" Script Info and Documentation  {{{
+" Script Info and Documentation  
 "=============================================================================
 "     Copyright: Copyright (C) 2002 & 2003 Bindu Wavell 
 "                Copyright (C) 2010 Oliver Uvman
@@ -22,21 +22,21 @@
 " Documentation: See minibufexpl.txt
 "
 "=============================================================================
-" }}}
+" 
 "
 " Startup Check
 "
-" Has this plugin already been loaded? {{{
+" Has this plugin already been loaded? 
 "
 if exists('loaded_minibufexplorer')
   finish
 endif
 let loaded_minibufexplorer = 1
-" }}}
+" 
 
 " Mappings and Commands
 "
-" MBE Keyboard Mappings {{{
+" MBE Keyboard Mappings 
 " If we don't already have keyboard mappings for MBE then create them 
 " 
 if !hasmapto('<Plug>MiniBufExplorer')
@@ -54,8 +54,8 @@ endif
 if !hasmapto('<Plug>MBEMarkCurrent')
   map <unique> <Leader>mq <Plug>MBEMarkCurrent
 endif
-" }}}
-" MBE <Script> internal map {{{
+" 
+" MBE <Script> internal map 
 " 
 noremap <unique> <script> <Plug>MiniBufExplorer  :call <SID>StartExplorer(1, -1, bufnr("%"))<CR>:<BS>
 noremap <unique> <script> <Plug>CMiniBufExplorer :call <SID>StopExplorer(1)<CR>:<BS>
@@ -63,8 +63,8 @@ noremap <unique> <script> <Plug>UMiniBufExplorer :call <SID>AutoUpdate(-1,bufnr(
 noremap <unique> <script> <Plug>TMiniBufExplorer :call <SID>ToggleExplorer()<CR>:<BS>
 noremap <unique> <script> <Plug>MBEMarkCurrent :call <SID>MarkCurrentBuffer(bufname("%"),1)<CR>:<BS>
 
-" }}}
-" MBE commands {{{
+" 
+" MBE commands 
 " 
 if !exists(':MiniBufExplorer')
   command! MiniBufExplorer  call <SID>StartExplorer(1, -1, bufnr("%"))
@@ -83,11 +83,11 @@ if !exists(':MBEbn')
 endif
 if !exists(':MBEbp')
   command! MBEbp call <SID>CycleBuffer(0)
-endif " }}}
+endif " 
 
 " Global Configuration Variables
 "
-" Debug Level {{{
+" Debug Level 
 "
 " 0 = no logging
 " 1=5 = errors ; 1 is the most important
@@ -97,8 +97,8 @@ if !exists('g:miniBufExplorerDebugLevel')
   let g:miniBufExplorerDebugLevel = 1
 endif
 
-" }}}
-" Debug Mode {{{
+" 
+" Debug Mode 
 "
 " 0 = debug to a window
 " 1 = use vim's echo facility
@@ -111,8 +111,8 @@ if !exists('g:miniBufExplorerDebugMode')
   let g:miniBufExplorerDebugMode = 3
 endif 
 
-" }}}
-" Allow auto update? {{{
+" 
+" Allow auto update? 
 "
 " We start out with this off for startup, but once vim is running we 
 " turn this on.
@@ -120,16 +120,16 @@ if !exists('g:miniBufExplorerAutoUpdate')
   let g:miniBufExplorerAutoUpdate = 0
 endif
 
-" }}}
-" MoreThanOne? {{{
+" 
+" MoreThanOne? 
 " Display Mini Buf Explorer when there are 'More Than One' eligible buffers 
 "
 if !exists('g:miniBufExplorerMoreThanOne')
   let g:miniBufExplorerMoreThanOne = 2
 endif 
 
-" }}}
-" Split below/above/left/right? {{{
+" 
+" Split below/above/left/right? 
 " When opening a new -MiniBufExplorer- window, split the new windows below or 
 " above the current window?  1 = below, 0 = above.
 "
@@ -137,8 +137,8 @@ if !exists('g:miniBufExplSplitBelow')
   let g:miniBufExplSplitBelow = &splitbelow
 endif 
 
-" }}}
-" Split to edge? {{{
+" 
+" Split to edge? 
 " When opening a new -MiniBufExplorer- window, split the new windows to the
 " full edge? 1 = yes, 0 = no.
 "
@@ -146,8 +146,8 @@ if !exists('g:miniBufExplSplitToEdge')
   let g:miniBufExplSplitToEdge = 1
 endif 
 
-" }}}
-" MaxHeight (depreciated) {{{
+" 
+" MaxHeight (depreciated) 
 " When sizing the -MiniBufExplorer- window, assign a maximum window height.
 " 0 = size to fit all buffers, otherwise the value is number of lines for
 " buffer. [Depreciated use g:miniBufExplMaxSize]
@@ -156,8 +156,8 @@ if !exists('g:miniBufExplMaxHeight')
   let g:miniBufExplMaxHeight = 0
 endif 
 
-" }}}
-" MaxSize {{{
+" 
+" MaxSize 
 " Same as MaxHeight but also works for vertical splits if specified with a
 " vertical split then vertical resizing will be performed. If left at 0 
 " then the number of columns in g:miniBufExplVSplit will be used as a
@@ -166,8 +166,8 @@ if !exists('g:miniBufExplMaxSize')
   let g:miniBufExplMaxSize = g:miniBufExplMaxHeight
 endif
 
-" }}}
-" MinHeight (depreciated) {{{
+" 
+" MinHeight (depreciated) 
 " When sizing the -MiniBufExplorer- window, assign a minumum window height.
 " the value is minimum number of lines for buffer. Setting this to zero can
 " cause strange height behavior. The default value is 1 [Depreciated use
@@ -177,16 +177,16 @@ if !exists('g:miniBufExplMinHeight')
   let g:miniBufExplMinHeight = 1
 endif
 
-" }}}
-" MinSize {{{
+" 
+" MinSize 
 " Same as MinHeight but also works for vertical splits. For vertical splits, 
 " this is ignored unless g:miniBufExplMax(Size|Height) are specified.
 if !exists('g:miniBufExplMinSize')
   let g:miniBufExplMinSize = g:miniBufExplMinHeight
 endif
 
-" }}}
-" Horizontal or Vertical explorer? {{{
+" 
+" Horizontal or Vertical explorer? 
 " For folks that like vertical explorers, I'm caving in and providing for
 " veritcal splits. If this is set to 0 then the current horizontal 
 " splitting logic will be run. If however you want a vertical split,
@@ -196,8 +196,8 @@ if !exists('g:miniBufExplVSplit')
   let g:miniBufExplVSplit = 0
 endif
 
-" }}}
-" TabWrap? {{{
+" 
+" TabWrap? 
 " By default line wrap is used (possibly breaking a tab name between two
 " lines.) Turning this option on (setting it to 1) can take more screen
 " space, but will make sure that each tab is on one and only one line.
@@ -206,8 +206,8 @@ if !exists('g:miniBufExplTabWrap')
   let g:miniBufExplTabWrap = 0
 endif
 
-" }}}
-" ShowBufNumber? {{{
+" 
+" ShowBufNumber? 
 " By default buffers' numbers are shown in MiniBufExplorer. You can turn it off
 " by setting this option to 0.
 "
@@ -215,8 +215,8 @@ if !exists('g:miniBufExplShowBufNumbers')
   let g:miniBufExplShowBufNumbers = 1
 endif
 
-" }}}
-" Extended window navigation commands? {{{
+" 
+" Extended window navigation commands? 
 " Global flag to turn extended window navigation commands on or off
 " enabled = 1, dissabled = 0
 "
@@ -283,22 +283,22 @@ if g:miniBufExplMapCTabSwitchWindows
   noremap <C-S-TAB> <C-W>W
 endif
 
-" }}}
-" Modifiable Select Target {{{
+" 
+" Modifiable Select Target 
 "
 if !exists('g:miniBufExplModSelTarget')
   let g:miniBufExplModSelTarget = 0
 endif
 
-"}}}
-" Force Syntax Enable {{{
+
+" Force Syntax Enable 
 "
 if !exists('g:miniBufExplForceSyntaxEnable')
   let g:miniBufExplForceSyntaxEnable = 0
 endif
 
-" }}}
-" Single/Double Click? {{{
+" 
+" Single/Double Click? 
 " flag that can be set to 1 in a users .vimrc to allow 
 " single click switching of tabs. By default we use
 " double click for tab selection.
@@ -326,15 +326,15 @@ if g:miniBufExplUseSingleClick == 1
     let  s:m = s:m . s:clickmap
     exec s:m
   endif
-endif " }}}
-" Close on Select? {{{
+endif " 
+" Close on Select? 
 " Flag that can be set to 1 in a users .vimrc to hide
 " the explorer when a user selects a buffer.
 "
 if !exists('g:miniBufExplCloseOnSelect')
   let g:miniBufExplCloseOnSelect = 0
-endif " }}}
-" Check for duplicate buffer names? {{{
+endif " 
+" Check for duplicate buffer names? 
 " Flag that can be set to 0 in a users .vimrc to turn off
 " the explorer's feature that differentiates similar buffer names by
 " displaying the parent directory names. This feature should be turned off
@@ -342,11 +342,11 @@ endif " }}}
 "
 if !exists('g:miniBufExplCheckDupeBufs')
   let g:miniBufExplCheckDupeBufs = 1
-endif " }}}
+endif " 
 
 " Variables used internally
 "
-" Script/Global variables {{{
+" Script/Global variables 
 " Global used to store the buffer list so we don't update the
 " UI unless the list has changed.
 if !exists('g:miniBufExplBufList')
@@ -387,8 +387,8 @@ let s:debugIndex = 0
 " command line are picked up correctly.
 let s:MRUList = range(1, bufnr('$'))
   
-" }}}
-" Setup an autocommand group and some autocommands {{{
+" 
+" Setup an autocommand group and some autocommands 
 " that keep our explorer updated automatically.
 "
 
@@ -406,16 +406,16 @@ autocmd MiniBufExplorer CursorHold     * call <SID>DEBUG('-=> CursroHold AutoCmd
 autocmd MiniBufExplorer CursorHoldI    * call <SID>DEBUG('-=> CursorHoldI AutoCmd', 10) |call <SID>AutoUpdateCheck(bufnr("%"))
 autocmd MiniBufExplorer VimEnter       * call <SID>DEBUG('-=> VimEnter AutoCmd', 10) |let g:miniBufExplorerAutoUpdate = 1 |call <SID>AutoUpdate(-1,bufnr("%"))
 augroup NONE
-" }}}
+" 
 
 " Functions
-" EscapeTilde - escapes "~" {{{
+" EscapeTilde - escapes "~" 
 function! <SID>EscapeTilde(str)
    return substitute(a:str, "\\\~","\\\\\~","g")
 endfunction
-" }}}
+" 
 "
-" StartExplorer - Sets up our explorer and causes it to be displayed {{{
+" StartExplorer - Sets up our explorer and causes it to be displayed 
 "
 function! <SID>StartExplorer(sticky,delBufNum,currBufName)
   call <SID>DEBUG('===========================',10)
@@ -560,8 +560,8 @@ function! <SID>StartExplorer(sticky,delBufNum,currBufName)
 
 endfunction 
 
-" }}}
-" StopExplorer - Looks for our explorer and closes the window if it is open {{{
+" 
+" StopExplorer - Looks for our explorer and closes the window if it is open 
 "
 function! <SID>StopExplorer(sticky)
   call <SID>DEBUG('===========================',10)
@@ -591,8 +591,8 @@ function! <SID>StopExplorer(sticky)
 
 endfunction
 
-" }}}
-" ToggleExplorer - Looks for our explorer and opens/closes the window {{{
+" 
+" ToggleExplorer - Looks for our explorer and opens/closes the window 
 "
 function! <SID>ToggleExplorer()
   call <SID>DEBUG('===========================',10)
@@ -616,8 +616,8 @@ function! <SID>ToggleExplorer()
 
 endfunction
 
-" }}}
-" FindWindow - Return the window number of a named buffer {{{
+" 
+" FindWindow - Return the window number of a named buffer 
 " If none is found then returns -1. 
 "
 function! <SID>FindWindow(bufName, doDebug)
@@ -641,8 +641,8 @@ function! <SID>FindWindow(bufName, doDebug)
 
 endfunction
 
-" }}}
-" FindCreateWindow - Attempts to find a window for a named buffer. {{{
+" 
+" FindCreateWindow - Attempts to find a window for a named buffer. 
 "
 " If it is found then moves there. Otherwise creates a new window and 
 " configures it and moves there.
@@ -750,8 +750,8 @@ function! <SID>FindCreateWindow(bufName, forceEdge, isExplorer, doDebug)
 
 endfunction
 
-" }}}
-" DisplayBuffers - Wrapper for getting MBE window shown {{{
+" 
+" DisplayBuffers - Wrapper for getting MBE window shown 
 "
 " Makes sure we are in our explorer, then erases the current buffer and turns 
 " it into a mini buffer explorer window.
@@ -779,8 +779,8 @@ function! <SID>DisplayBuffers(delBufNum,currBufName)
 
 endfunction
 
-" }}}
-" Resize Window - Set width/height of MBE window {{{
+" 
+" Resize Window - Set width/height of MBE window 
 " 
 " Makes sure we are in our explorer, then sets the height/width for our explorer 
 " window so that we can fit all of our information without taking extra lines.
@@ -860,8 +860,8 @@ function! <SID>ResizeWindow()
   
 endfunction
 
-" }}}
-" ShowBuffers - Clear current buffer and put the MBE text into it {{{
+" 
+" ShowBuffers - Clear current buffer and put the MBE text into it 
 " 
 " Makes sure we are in our explorer, then adds a list of all modifiable 
 " buffers to the current buffer. Special marks are added for buffers that 
@@ -897,8 +897,8 @@ function! <SID>ShowBuffers(delBufNum,currBufName)
   
 endfunction
 
-" }}}
-" Max - Returns the max of two numbers {{{
+" 
+" Max - Returns the max of two numbers 
 "
 function! <SID>Max(argOne, argTwo)
   if a:argOne > a:argTwo
@@ -908,15 +908,26 @@ function! <SID>Max(argOne, argTwo)
   endif
 endfunction
 
-" }}}
-" CheckRootDirForDupes - Checks if the buffer parent dirs are the same {{{
+" 
+" Abs - Returns absolute value of the number
+"
+function! <SID>Abs(argOne)
+  if a:argOne < 0
+    return 0 - a:argOne
+  else
+    return a:argOne
+  endif
+endfunction
+
+" 
+" CheckRootDirForDupes - Checks if the buffer parent dirs are the same 
 " 
 " Compares 2 buffers with the same filename and returns the directory of
 " buffer 1's path at the point where it is different from buffer 2's path
 "
 function! CheckRootDirForDupes(level,path1,path2)
-    call <SID>DEBUG('Entering Dupe Dir Checking Function for at level '.a:level.' for '.join(a:path1).' vs '.join(a:path2),10)
-    if(len(a:path1) >= abs(a:level))
+    call <SID>DEBUG('Entering Dupe Dir Checking Function for at level '.a:level.' for '.join(a:path3).' vs '.join(a:path2),10)
+    if(len(a:path1) >= <SID>Abs(a:level))
         call <SID>DEBUG('Path level1 is '.get(a:path1,a:level),10)
         call <SID>DEBUG('Path level2 is '.get(a:path2,a:level),10)
         if(get(a:path1,a:level) == get(a:path2,a:level))
@@ -932,8 +943,8 @@ function! CheckRootDirForDupes(level,path1,path2)
     endif
 endfunction
 
-" }}}
-" IgnoreBuffer - check to see if buffer should be ignored {{{
+" 
+" IgnoreBuffer - check to see if buffer should be ignored 
 "
 " Returns 0 if this buffer should be displayed in the list, 1 otherwise.
 "
@@ -963,8 +974,8 @@ function! <SID>IgnoreBuffer(buf)
   return 0 
 endfunction
 
-" }}}
-" BuildBufferList - Build the text for the MBE window {{{
+" 
+" BuildBufferList - Build the text for the MBE window 
 " 
 " Creates the buffer list string and returns 1 if it is different than
 " last time this was called and 0 otherwise.
@@ -1168,8 +1179,8 @@ function! <SID>BuildBufferList(delBufNum, updateBufList, currBufName)
 
 endfunction
 
-" }}}
-" NameCmp - compares tabs based on filename {{{
+" 
+" NameCmp - compares tabs based on filename 
 "
 function! <SID>NameCmp(tab1, tab2)
   let l:name1 = matchstr(a:tab1, ":.*")
@@ -1183,8 +1194,8 @@ function! <SID>NameCmp(tab1, tab2)
   endif
 endfunction
 
-" }}}
-" MRUCmp - compares tabs based on MRU order {{{
+" 
+" MRUCmp - compares tabs based on MRU order 
 "
 function! <SID>MRUCmp(tab1, tab2)
   let l:buf1 = str2nr(matchstr(a:tab1, '[0-9]\+'))
@@ -1192,8 +1203,8 @@ function! <SID>MRUCmp(tab1, tab2)
   return index(s:MRUList, l:buf1) - index(s:MRUList, l:buf2)
 endfunction
 
-" }}}
-" HasEligibleBuffers - Are there enough MBE eligible buffers to open the MBE window? {{{
+" 
+" HasEligibleBuffers - Are there enough MBE eligible buffers to open the MBE window? 
 " 
 " Returns 1 if there are any buffers that can be displayed in a 
 " mini buffer explorer. Otherwise returns 0. If delBufNum is
@@ -1253,9 +1264,9 @@ function! <SID>HasEligibleBuffers(delBufNum)
   
 endfunction
 
-" }}}
+" 
 " Auto Update Check - Function called by auto commands to see if MBE needs to
-" be updated {{{
+" be updated 
 " If current buffer's modified flag has changed THEN
 " call the auto update function. ELSE
 " Don't do anything
@@ -1283,9 +1294,9 @@ function! <SID>AutoUpdateCheck(currBuf)
     call <SID>DEBUG('Buffer List is '.join(g:modTrackingList),10)
 endfunction
 
-" }}}
+" 
 " Clean Mod Tracking List - Function called when a buffer is deleted to keep the
-" list used to track modified buffers nice and small {{{
+" list used to track modified buffers nice and small 
 " On buffer delete, loop through g:modTrackingList and delete the item that
 " matches this buffer's number
 function! <SID>CleanModTrackingList(currBuf)
@@ -1299,8 +1310,8 @@ function! <SID>CleanModTrackingList(currBuf)
     endfor
 endfunction
 
-" }}}
-" Auto Update - Function called by auto commands for auto updating the MBE {{{
+" 
+" Auto Update - Function called by auto commands for auto updating the MBE 
 "
 " IF auto update is turned on        AND
 "    we are in a real buffer         AND
@@ -1414,8 +1425,8 @@ function! <SID>AutoUpdate(delBufNum,currBufName)
 
 endfunction
 
-" }}}
-" GetSelectedBuffer - From the MBE window, return the bufnum for buf under cursor {{{
+" 
+" GetSelectedBuffer - From the MBE window, return the bufnum for buf under cursor 
 " 
 " If we are in our explorer window then return the buffer number
 " for the buffer under the cursor.
@@ -1443,8 +1454,8 @@ function! <SID>GetSelectedBuffer()
 
 endfunction
 
-" }}}
-" MBESelectBuffer - From the MBE window, open buffer under the cursor {{{
+" 
+" MBESelectBuffer - From the MBE window, open buffer under the cursor 
 " 
 " If we are in our explorer, then we attempt to open the buffer under the
 " cursor in the previous window.
@@ -1524,8 +1535,8 @@ function! <SID>MBESelectBuffer(split)
   call <SID>DEBUG('===========================',10)
 endfunction
 
-" }}}
-" MBEDeleteBuffer - From the MBE window, delete selected buffer from list {{{
+" 
+" MBEDeleteBuffer - From the MBE window, delete selected buffer from list 
 " 
 " After making sure that we are in our explorer, This will delete the buffer 
 " under the cursor. If the buffer under the cursor is being displayed in a
@@ -1636,8 +1647,8 @@ function! <SID>MBEDeleteBuffer(prevBufName)
 
 endfunction
 
-" }}}
-" MBEClick - Handle mouse double click {{{
+" 
+" MBEClick - Handle mouse double click 
 "
 function! s:MBEClick()
   call <SID>DEBUG('Entering MBEClick()',10)
@@ -1652,8 +1663,8 @@ function! s:MBEDoubleClick()
   call <SID>MBESelectBuffer(0)
 endfunction
 
-" }}}
-" CycleBuffer - Cycle Through Buffers {{{
+" 
+" CycleBuffer - Cycle Through Buffers 
 "
 " Move to next or previous buffer in the current window. If there 
 " are no more modifiable buffers then stay on the current buffer.
@@ -1699,15 +1710,15 @@ function! <SID>CycleBuffer(forward)
 
 endfunction
 
-" }}}
-" MRUPop - remove buffer from MRU list {{{
+" 
+" MRUPop - remove buffer from MRU list 
 "
 function! <SID>MRUPop(buf)
   call filter(s:MRUList, 'v:val != '.a:buf)
 endfunction
 
-" }}}
-" MRUPush - add buffer to MRU list {{{
+" 
+" MRUPush - add buffer to MRU list 
 "
 function! <SID>MRUPush(buf)
   if <SID>IgnoreBuffer(a:buf) == 1
@@ -1722,8 +1733,8 @@ function! <SID>MRUPush(buf)
 endfunction
 
 
-" }}}
-" DEBUG - Display debug output when debugging is turned on {{{
+" 
+" DEBUG - Display debug output when debugging is turned on 
 "
 " Thanks to Charles E. Campbell, Jr. PhD <cec@NgrOyphSon.gPsfAc.nMasa.gov> 
 " for Decho.vim which was the inspiration for this enhanced debugging 
@@ -1793,8 +1804,8 @@ function! <SID>DEBUG(msg, level)
 
   endif
 
-endfunc " }}}
-" CheckForLastWindow - Quit Vim if :q is excecuted when no files are open {{{
+endfunc " 
+" CheckForLastWindow - Quit Vim if :q is excecuted when no files are open 
 function! <SID>CheckForLastWindow()
   " if the window is quickfix go on
   if &buftype=="quickfix"
@@ -1803,6 +1814,6 @@ function! <SID>CheckForLastWindow()
       quit
     endif
   endif
-endfunction " }}}
+endfunction " 
 
 " vim:ft=vim:fdm=marker:ff=unix:nowrap:tabstop=4:shiftwidth=4:softtabstop=4:smarttab:shiftround:expandtab
