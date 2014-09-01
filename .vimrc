@@ -32,7 +32,7 @@ set smartindent
 
 set fileencodings=ucs-bom,utf-8,cp1251,default,latin1
 set backup
-set backupdir=~/.vim/backup
+set backupdir=~/.vim/backup//
 
 " Position in file
 au BufReadPost * 
