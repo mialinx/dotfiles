@@ -41,6 +41,7 @@ au BufReadPost *
     \ endif
 
 au BufNewFile,BufRead *.tpl set ft=tt2
+au BufNewFile,BufRead *.go set ft=go
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
