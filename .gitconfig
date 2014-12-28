@@ -14,6 +14,7 @@
 [alias]
 	graph = log --graph --date-order -C -M --pretty=compact --all --date=short
 	graph2 = log --graph --date-order -C -M --pretty=simple --all --date=short
+	jobdone = log --date-order --all --format=format:'%ai <%an>    %s' --after=7.days.ago
 	st = status
 	ci = commit
 	co = checkout
