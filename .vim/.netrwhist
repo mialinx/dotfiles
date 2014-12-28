@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/nuf/tmp/Text-Xslate-2.0006/lib'
 let g:netrw_dirhist_2='/home/nuf/dotfiles/.vim/backup'
 let g:netrw_dirhist_3='/home/nuf/tmp/rails/activesupport'
+let g:netrw_dirhist_4='/etc/nginx/sites-enabled'

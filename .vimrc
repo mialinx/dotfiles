@@ -41,11 +41,15 @@ au BufReadPost *
     \ endif
 
 au BufNewFile,BufRead *.tpl set ft=tt2
+au BufNewFile,BufRead *.go 
+    \ set ft=go |
+    \ set noexpandtab
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 map <F10> :qa<Enter>
+map <F9>  :!go install %:t:r<Enter>
 
 map <silent> <Leader>1 :b1<Enter>
 map <silent> <Leader>2 :b2<Enter>
@@ -67,4 +71,5 @@ let g:miniBufExplMaxSize=1
 let NERDTreeHightlightCursorline=1
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 autocmd BufNewFile,BufRead *.psgi setf perl
+autocmd BufNewFile,BufRead *.go setf go
 
