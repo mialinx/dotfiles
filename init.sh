@@ -14,5 +14,8 @@ grep dotfiles/.bashrc $HOME/.bashrc || echo "source ~/dotfiles/.bashrc" >> $HOME
 # screen
 [ -e $HOME/.screenrc ] || ln -s $HOME/dotfiles/.screenrc $HOME/.screenrc
 
+# tmux
+[ -e $HOME/.tmux.conf ] || ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
+
 # git
 [ -e $HOME/.gitconfig ] || ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig 
