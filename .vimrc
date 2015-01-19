@@ -195,38 +195,42 @@
 
 " Кастомные биндинги
     inoremap <C-U> <C-G>u<C-U>
-    map <F10> :qa<Enter>
-    map <silent> <Leader>1 :b1<Enter>
-    map <silent> <Leader>2 :b2<Enter>
-    map <silent> <Leader>3 :b3<Enter>
-    map <silent> <Leader>4 :b4<Enter>
-    map <silent> <Leader>5 :b5<Enter>
-    map <silent> <Leader>6 :b6<Enter>
-    map <silent> <Leader>7 :b7<Enter>
-    map <silent> <Leader>8 :b8<Enter>
-    map <silent> <Leader>9 :b9<Enter>
-    map <silent> <Leader>[ :bp<Enter>
-    map <silent> <Leader>] :bn<Enter>
-    map <silent> <Leader>q :Bclose<CR>
-    map <silent> <Leader>t :NERDTreeToggle<Enter>
-    map <silent> <leader>f :NERDTreeFind <CR>
-    map <silent> <leader>b :BufExplorer<CR>
+    noremap <F10> :qa<CR>
+    noremap <silent> <Leader>1 :b1<CR>
+    noremap <silent> <Leader>2 :b2<CR>
+    noremap <silent> <Leader>3 :b3<CR>
+    noremap <silent> <Leader>4 :b4<CR>
+    noremap <silent> <Leader>5 :b5<CR>
+    noremap <silent> <Leader>6 :b6<CR>
+    noremap <silent> <Leader>7 :b7<CR>
+    noremap <silent> <Leader>8 :b8<CR>
+    noremap <silent> <Leader>9 :b9<CR>
+    noremap <silent> <Leader>[ :bp<CR>
+    noremap <silent> <Leader>] :bn<CR>
+    noremap <silent> <Leader>q :bc<CR>
+    noremap <silent> <Leader>t :NERDTreeToggle<CR>
+    noremap <silent> <Leader>f :NERDTreeFind <CR>
+    noremap <silent> <Leader>b :BufExplorer<CR>
     " Y янкает от курсора и до конца строки. На манер страндартных D и С.
     nnoremap Y y$    
     " В коммандном режиме разрешить прыгать в конец и начало строки, как в консоли
-    cnoremap <c-e> <end>
-    imap     <c-e> <c-o>$
-    cnoremap <c-a> <home>
-    imap     <c-a> <c-o>^
+    cnoremap <C-e> <end>
+    imap     <C-e> <c-o>$
+    cnoremap <C-a> <home>
+    imap     <C-a> <c-o>^
     " Ремапим русские символы
     " set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
+    " Поиск по всем файлам
+    nnoremap <silent> <C-f> :vimgrep <cword> ** \| copen<CR>
+    nnoremap <silent> <C-j> :cn<CR>
+    nnoremap <silent> <C-k> :cp<CR>
 
 " Плагины
 
     " NERDTree
         let NERDTreeShowBookmarks=1
         let NERDTreeChDirMode=2
-        let NERDTreeQuitOnOpen=1
+        let NERDTreeQuitOnOpen=0  " закрвыть дерево при открытии файла
         let NERDTreeShowHidden=0
         let NERDTreeKeepTreeInNewTab=0
         let NERDTreeMinimalUI=1 " Disables display of the 'Bookmarks' label and 'Press ? for help' text.
@@ -242,7 +246,7 @@
         au BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
     " autocomplpop.vim
-        "let g:acp_enableAtStartup        = 1         " включить при старте системы
+        let g:acp_enableAtStartup        = 1         " включить при старте системы
         "let g:acp_mappingDriven          = 0         " если 1 то будет включаться по хоткею
         "let g:acp_ignorecaseOption       = 1         " игнорировать регистр
         "let g:acp_completeOption         = '.,w,b,k' " опции дополнения (completeopt)
