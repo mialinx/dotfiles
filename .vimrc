@@ -232,9 +232,13 @@
         let NERDTreeMinimalUI=1 " Disables display of the 'Bookmarks' label and 'Press ? for help' text.
         let NERDTreeDirArrows=1 " Tells the NERD tree to use arrows instead of + ~ chars when displaying directories.
         let NERDTreeBookmarksFile= $HOME . '/.vim/.NERDTreeBookmarks'
-        let NERDTreeWinSize=60
+        let NERDTreeWinSize=30
         let NERDTreeIgnore=['\.pyc$']
         let NERDTreeHightlightCursorline=1
+        " запускать при путом vim
+        autocmd StdinReadPre * let s:std_in=1
+        autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+        " выходить если закрыть последний буфер 
         au BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
     " autocomplpop.vim
