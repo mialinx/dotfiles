@@ -16,7 +16,8 @@ export EDITOR=vim
 export TERM=xterm-256color
 
 alias ls='ls --color=auto'
-alias ll='ls -la'
+alias ll='ls -lahd'
 alias mc="mc -U"
+alias tmux="tmux a || tmux -2"
 
 PS1='[\u@\h \W]\$ '
