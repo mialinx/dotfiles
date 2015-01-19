@@ -53,6 +53,8 @@
         Plugin 'chase/vim-ansible-yaml'
     " Python syntax
         Plugin 'hdima/python-syntax'
+    " GoLang
+        Plugin 'fatih/vim-go'
 
     filetype plugin indent on     " required!
     " Brief help
@@ -173,14 +175,14 @@
     "set foldlevel=0         " This is just what i use
 
     " Восстановление позиции в файле
-    au BufReadPost * 
+    au BufReadPost *
         \ if line("'\"") > 0 && line ("'\"") <= line("$") |
         \   exe "normal! g'\"" |
         \ endif
 
 " Типы файлов
     au BufNewFile,BufRead *.tpl set ft=tt2
-    au BufNewFile,BufRead *.go 
+    au BufNewFile,BufRead *.go
         \ set ft=go |
         \ set noexpandtab
     au BufRead,BufNewFile *.html if  search('{{') > 0  || search('{%') > 0 | set filetype=htmldjango | endif
@@ -212,7 +214,7 @@
     noremap <silent> <Leader>f :NERDTreeFind <CR>
     noremap <silent> <Leader>b :BufExplorer<CR>
     " Y янкает от курсора и до конца строки. На манер страндартных D и С.
-    nnoremap Y y$    
+    nnoremap Y y$
     " В коммандном режиме разрешить прыгать в конец и начало строки, как в консоли
     cnoremap <C-e> <end>
     imap     <C-e> <c-o>$
@@ -242,7 +244,7 @@
         " запускать при путом vim
         autocmd StdinReadPre * let s:std_in=1
         autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-        " выходить если закрыть последний буфер 
+        " выходить если закрыть последний буфер
         au BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
     " autocomplpop.vim
@@ -261,14 +263,31 @@
         \ }
 
     " Airline
-        let g:airline_theme='molokai'
+        let g:airline_theme='lucius'
         let g:airline_powerline_fonts = 1
-        let g:airline_section_b='%{getcwd()}'
         let g:airline#extensions#whitespace#checks = [ 'trailing' ]
         let g:airline#extensions#ctrlp#color_template = 'normal'
         let g:airline#extensions#ctrlp#show_adjacent_modes = 1
         let g:airline#extensions#tabline#enabled = 1
         let g:airline#extensions#tabline#fnamemod = ':t'
+
+        if !exists('g:airline_symbols')
+            let g:airline_symbols = {}
+        endif
+        "let g:airline_left_sep = '▶'
+        "let g:airline_left_sep = '»'
+        let g:airline_left_sep = ''
+        "let g:airline_right_sep = '◀'
+        "let g:airline_right_sep = '«'
+        let g:airline_right_sep = ''
+        "let g:airline_symbols.linenr = '␊'
+        "let g:airline_symbols.linenr = '␤'
+        let g:airline_symbols.linenr = '¶'
+        let g:airline_symbols.branch = '⎇'
+        let g:airline_symbols.paste = 'ρ'
+        "let g:airline_symbols.paste = 'Þ'
+        "let g:airline_symbols.paste = '∥'
+        let g:airline_symbols.whitespace = 'Ξ'
 
     " CtrlP
         let g:ctrlp_open_new_file = 't'
