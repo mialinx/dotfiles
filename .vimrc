@@ -129,7 +129,12 @@
     " Символ табуляции и конца строки
     if has('multi_byte')
         if version >= 700
-            set listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:×
+            "set listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:×
+            "set listchars=tab:⋮\ ,extends:❯,precedes:❮,nbsp:×
+            "set listchars=tab:│\ ,extends:❯,precedes:❮,nbsp:×
+            "set listchars=tab:→\ ,extends:❯,precedes:❮,nbsp:×
+            set listchars=tab:⋅\ ,extends:❯,precedes:❮,nbsp:×
+            "set listchars=tab:≀\ ,extends:❯,precedes:❮,nbsp:×
         else
             set listchars=tab:»\ ,extends:>,precedes:<,nbsp:_
         endif
