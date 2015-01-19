@@ -2,4 +2,5 @@
 .vim/swap/*
 *~
 .vim/.netrwhist
+.vim/bundle
 .netrwhist

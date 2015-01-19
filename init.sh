@@ -5,7 +5,10 @@
 [ -d $HOME/.vim/backup ] || mkdir $HOME/.vim/backup
 [ -d $HOME/.vimbundle ] || mkdir $HOME/.vimbundle
 [ -e $HOME/dotfiles/.vim/bundle ] || ln -s $HOME/.vimbundle $HOME/dotfiles/.vim/bundle
-if [ ! -d $HOME/.vimbundle/vundle ] then
+if [ -d $HOME/.vimbundle/vundle ]
+then
+    vim +PluginUpdate +quitall
+else
     git clone git://github.com/gmarik/vundle.git  $HOME/.vimbundle/vundle
     vim +PluginInstall +quitall
 fi

@@ -143,7 +143,6 @@ inoremap <C-U> <C-G>u<C-U>
 map <F10> :qa<Enter>
 
 " plugin customization
-execute pathogen#infect()
 let g:miniBufExplMaxSize=1
 let NERDTreeHightlightCursorline=1
 au BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
