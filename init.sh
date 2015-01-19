@@ -3,6 +3,13 @@
 # vim 
 [ -e $HOME/.vim ] || ln -s $HOME/dotfiles/.vim $HOME/.vim 
 [ -d $HOME/.vim/backup ] || mkdir $HOME/.vim/backup
+[ -d $HOME/.vimbundle ] || mkdir $HOME/.vimbundle
+[ -e $HOME/dotfiles/.vim/bundle ] || ln -s $HOME/.vimbundle $HOME/dotfiles/.vim/bundle
+if [ ! -d $HOME/.vimbundle/vundle ] then
+    git clone git://github.com/gmarik/vundle.git  $HOME/.vimbundle/vundle
+    vim +PluginInstall +quitall
+fi
+
 touch $HOME/.vimrc
 grep dotfiles/.vimrc $HOME/.vimrc || echo "source ~/dotfiles/.vimrc" >> $HOME/.vimrc
 
