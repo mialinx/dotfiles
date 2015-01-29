@@ -55,6 +55,9 @@
         Plugin 'hdima/python-syntax'
     " GoLang
         Plugin 'fatih/vim-go'
+    " Git
+        Plugin 'tpope/vim-fugitive'
+
 
     filetype plugin indent on     " required!
     " Brief help
