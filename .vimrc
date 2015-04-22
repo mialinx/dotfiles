@@ -76,7 +76,7 @@
     syntax on
     set background=dark
     try
-        colorschem solarized
+        colorschem molokai
     catch /^Vim\%((\a\+)\)\=:E185/
         echo "color theme not found. Run :BundleInstall"
     endtry
