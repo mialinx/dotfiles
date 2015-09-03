@@ -27,5 +27,8 @@ grep dotfiles/.bashrc $HOME/.bashrc || echo "source ~/dotfiles/.bashrc" >> $HOME
 # tmux
 [ -e $HOME/.tmux.conf ] || ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
 
+# ack
+[ -e $HOME/.ackrc ] || ln -s $HOME/dotfiles/.ackrc $HOME/.ackrc
+
 # git
 [ -e $HOME/.gitconfig ] || ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig 

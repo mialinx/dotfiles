@@ -17,6 +17,7 @@ export TERM=xterm-256color
 
 alias ls='ls --color=auto'
 alias ll='ls -lahd'
+alias grep='grep --color'
 alias mc="mc -U"
 alias tmux="tmux a || tmux -2"
 

@@ -57,6 +57,8 @@
         Plugin 'fatih/vim-go'
     " Git
         Plugin 'tpope/vim-fugitive'
+    " Ack
+        Plugin 'mileszs/ack.vim'
 
 
     filetype plugin indent on     " required!
@@ -231,7 +233,7 @@
     " Ремапим русские символы
     " set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
     " Поиск по всем файлам
-    nnoremap <silent> <C-f> :vimgrep <cword> ** \| copen<CR>
+    nnoremap <silent> <C-f> :Ack <cword> . <CR>
     nnoremap <silent> <C-j> :cn<CR>
     nnoremap <silent> <C-k> :cp<CR>
 
