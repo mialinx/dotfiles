@@ -80,7 +80,7 @@
     try
         colorschem molokai
     catch /^Vim\%((\a\+)\)\=:E185/
-        echo "Molokai theme not found. Run :BundleInstall"
+        echo "color theme not found. Run :BundleInstall"
     endtry
     highlight lCursor guifg=NONE guibg=Cyan
 
@@ -95,7 +95,6 @@
     set incsearch
     set hlsearch
     set list
-    set lcs=tab:\|.   "show tabs
     set viminfo='20,\"1000
     set diffopt=filler,iwhite
     set history=50
@@ -143,6 +142,7 @@
         else
             set listchars=tab:»\ ,extends:>,precedes:<,nbsp:_
         endif
+        hi clear SpecialKey " undo tab highlighting for some colorschemes
     endif
 
     " Символ, который будет показан перед перенесенной строкой
