@@ -233,7 +233,7 @@
     " Ремапим русские символы
     " set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
     " Поиск по всем файлам
-    nnoremap <silent> <C-f> :Ack <cword> . <CR>
+    nnoremap <silent> <C-f> :Ack -w <cword> . <CR>
     nnoremap <silent> <C-j> :cn<CR>
     nnoremap <silent> <C-k> :cp<CR>
 
