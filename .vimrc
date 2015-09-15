@@ -129,6 +129,9 @@
     set wildignore+=.hg,.git,.svn    " Version control
     set wildignore+=*.DS_Store       " OSX bullshit
     set wildignore+=*.pyc            " Python byte code
+    set wildignore+=*.pyo            " Python byte code
+    set wildignore+=*.a              " libraries
+    set wildignore+=*.so             " shared
 
     " Символ табуляции и конца строки
     if has('multi_byte')
