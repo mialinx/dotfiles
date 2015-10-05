@@ -20,5 +20,8 @@ alias ll='ls -lahd'
 alias grep='grep --color'
 alias mc="mc -U"
 alias tmux="tmux a || tmux -2"
-
+if which ack-grep > /dev/null
+then
+    alias ack="ack-grep"
+fi
 PS1='[\u@\h \W]\$ '
