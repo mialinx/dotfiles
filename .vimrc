@@ -211,6 +211,7 @@
 " Кастомные биндинги
     inoremap <C-U> <C-G>u<C-U>
     noremap <F10> :qa<CR>
+    noremap <F9> :GoBuild<CR>
     noremap <silent> <Leader>1 :b1<CR>
     noremap <silent> <Leader>2 :b2<CR>
     noremap <silent> <Leader>3 :b3<CR>
