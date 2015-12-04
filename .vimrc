@@ -59,6 +59,8 @@
         Plugin 'tpope/vim-fugitive'
     " Ack
         Plugin 'mileszs/ack.vim'
+    " Tagbar
+        Plugin 'majutsushi/tagbar'
 
 
     filetype plugin indent on     " required!
@@ -210,8 +212,10 @@
 
 " Кастомные биндинги
     inoremap <C-U> <C-G>u<C-U>
-    noremap <F10> :qa<CR>
+    nnoremap <silent> <F3> :Ack -w <cword> . <CR>
+    nnoremap <silent> <F8> :Tagbar<CR>
     noremap <F9> :GoBuild<CR>
+    noremap <F10> :qa<CR>
     noremap <silent> <Leader>1 :b1<CR>
     noremap <silent> <Leader>2 :b2<CR>
     noremap <silent> <Leader>3 :b3<CR>
@@ -225,7 +229,6 @@
     noremap <silent> <Leader>] :bn<CR>
     noremap <silent> <Leader>q :bc<CR>
     noremap <silent> <Leader>t :NERDTreeToggle<CR>
-    noremap <silent> <Leader>f :NERDTreeFind <CR>
     noremap <silent> <Leader>b :BufExplorer<CR>
     " Y янкает от курсора и до конца строки. На манер страндартных D и С.
     nnoremap Y y$
