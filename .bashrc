@@ -20,7 +20,7 @@ alias ll='ls -lahd'
 alias grep='grep --color'
 alias mc="mc -U"
 alias tmux="tmux a || tmux -2"
-if which ack-grep > /dev/null
+if which ack-grep > /dev/null 2>&1
 then
     alias ack="ack-grep"
 fi
