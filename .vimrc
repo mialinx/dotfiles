@@ -61,6 +61,8 @@
         Plugin 'mileszs/ack.vim'
     " Tagbar
         Plugin 'majutsushi/tagbar'
+    " indentLines
+        Plugin 'Yggdroot/indentLine'
 
 
     filetype plugin indent on     " required!
@@ -148,6 +150,13 @@
             set listchars=tab:»\ ,extends:>,precedes:<,nbsp:_
         endif
         hi clear SpecialKey " undo tab highlighting for some colorschemes
+    endif
+    if version >= 7.3
+        let g:indentLine_color_term = 239
+        let g:indentLine_color_gui = '#A4E57E'
+        let g:indentLine_color_tty_light = 7 " (default: 4)
+        let g:indentLine_color_dark = 1 " (default: 2)
+        let g:indentLine_char = '⋅'
     endif
 
     " Символ, который будет показан перед перенесенной строкой
