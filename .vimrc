@@ -255,6 +255,9 @@
 
 " Плагины
 
+    " Ack
+        let g:ackprg="ag"
+
     " NERDTree
         let NERDTreeShowBookmarks=1
         let NERDTreeChDirMode=2
