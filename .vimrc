@@ -244,6 +244,9 @@
     nnoremap <silent> <C-j> :cn<CR>
     nnoremap <silent> <C-k> :cp<CR>
 
+    " ,ts fix trailing spaces
+    autocmd FileType c,cpp,java,php,perl,python,go,javascript,xslate,django,css,scss,tpl,vim,sql autocmd BufWritePre <buffer> :%s/\s\+$//e
+
 " Плагины
 
     " NERDTree
