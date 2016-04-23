@@ -24,7 +24,8 @@
         Plugin 'scrooloose/nerdcommenter.git'
         Plugin 'vim-scripts/bufexplorer.zip.git'
         Plugin 'kien/ctrlp.vim.git'
-        Plugin 'bling/vim-airline'
+        Plugin 'vim-airline/vim-airline'
+        Plugin 'vim-airline/vim-airline-themes'
     " HTML/HAML
         Plugin 'othree/html5.vim.git'
         Plugin 'mattn/emmet-vim'
