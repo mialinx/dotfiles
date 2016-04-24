@@ -81,6 +81,7 @@
         set t_Co=256
     endif
     syntax on
+    set synmaxcol=200
     set background=dark
     try
         colorschem molokai
