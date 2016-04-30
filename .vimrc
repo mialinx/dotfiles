@@ -20,6 +20,13 @@
         Plugin 'nanotech/jellybeans.vim.git'
         Plugin 'scrooloose/nerdtree.git'
         Plugin 'tomasr/molokai.git'
+        Plugin 'quanganhdo/grb256'
+        Plugin 'Lokaltog/vim-distinguished'
+        Plugin 'endel/vim-github-colorscheme'
+        Plugin 'jpo/vim-railscasts-theme'
+        Plugin 'vim-scripts/ironman.vim'
+        Plugin 'vim-scripts/oceanlight'
+        Plugin 'vim-scripts/AutumnLeaf'
     " Real Plugins
         Plugin 'scrooloose/nerdcommenter.git'
         Plugin 'vim-scripts/bufexplorer.zip.git'
