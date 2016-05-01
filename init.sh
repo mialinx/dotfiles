@@ -29,3 +29,7 @@ grep dotfiles/.bashrc $HOME/.bashrc || echo "source ~/dotfiles/.bashrc" >> $HOME
 
 # git
 [ -e $HOME/.gitconfig ] || ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig 
+
+# xfce4-terminal
+[ -e $HOME/.config/xfce4/terminal/terminalrc ] || (mkdir -p $HOME/.config/xfce4/terminal/ && cp $HOME/dotfiles/terminalrc $HOME/.config/xfce4/terminal/terminalrc)
+
