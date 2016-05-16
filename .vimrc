@@ -61,6 +61,7 @@
         Plugin 'chase/vim-ansible-yaml'
     " Python syntax
         Plugin 'hdima/python-syntax'
+        Plugin 'nvie/vim-flake8'
     " GoLang
         Plugin 'fatih/vim-go'
     " Git
