@@ -1,35 +1,37 @@
 #!/bin/sh
 
 # vim 
-[ -e $HOME/.vim ] || ln -s $HOME/dotfiles/.vim $HOME/.vim 
-[ -d $HOME/.vim/backup ] || mkdir $HOME/.vim/backup
-[ -d $HOME/.vimbundle ] || mkdir $HOME/.vimbundle
-[ -e $HOME/dotfiles/.vim/bundle ] || ln -s $HOME/.vimbundle $HOME/dotfiles/.vim/bundle
-if [ -d $HOME/.vimbundle/vundle ]
+[ -e ~/.vim ] || ln -s ~/dotfiles/.vim ~/.vim 
+[ -d ~/.vim/backup ] || mkdir ~/.vim/backup
+[ -d ~/.vimbundle ] || mkdir ~/.vimbundle
+[ -e ~/dotfiles/.vim/bundle ] || ln -s ~/.vimbundle ~/dotfiles/.vim/bundle
+if [ -d ~/.vimbundle/vundle ]
 then
     vim +PluginUpdate +quitall
 else
-    git clone git://github.com/gmarik/vundle.git  $HOME/.vimbundle/vundle
+    git clone git://github.com/gmarik/vundle.git  ~/.vimbundle/vundle
     vim +PluginInstall +quitall
 fi
 
-touch $HOME/.vimrc
-grep dotfiles/.vimrc $HOME/.vimrc || echo "source ~/dotfiles/.vimrc" >> $HOME/.vimrc
+touch ~/.vimrc
+grep dotfiles/.vimrc ~/.vimrc || echo "source ~/dotfiles/.vimrc" >> ~/.vimrc
 
 # bash
-touch $HOME/.bashrc
-grep dotfiles/.colours $HOME/.bashrc || echo "source ~/dotfiles/.colours" >> $HOME/.bashrc
-grep dotfiles/.bashrc $HOME/.bashrc || echo "source ~/dotfiles/.bashrc" >> $HOME/.bashrc
+touch ~/.bashrc
+grep dotfiles/.colours ~/.bashrc || echo "source ~/dotfiles/.colours" >> ~/.bashrc
+grep dotfiles/.bashrc ~/.bashrc || echo "source ~/dotfiles/.bashrc" >> ~/.bashrc
 
 # screen
-[ -e $HOME/.screenrc ] || ln -s $HOME/dotfiles/.screenrc $HOME/.screenrc
+[ -e ~/.screenrc ] || ln -s ~/dotfiles/.screenrc ~/.screenrc
 
 # tmux
-[ -e $HOME/.tmux.conf ] || ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
+[ -e ~/.tmux.conf ] || ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 # git
-[ -e $HOME/.gitconfig ] || ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig 
+[ -e ~/.gitconfig ] || ln -s ~/dotfiles/.gitconfig ~/.gitconfig 
 
 # xfce4-terminal
-[ -e $HOME/.config/xfce4/terminal/terminalrc ] || (mkdir -p $HOME/.config/xfce4/terminal/ && cp $HOME/dotfiles/terminalrc $HOME/.config/xfce4/terminal/terminalrc)
+[ -e ~/.config/xfce4/terminal/terminalrc ] || (mkdir -p ~/.config/xfce4/terminal/ && cp ~/dotfiles/terminalrc ~/.config/xfce4/terminal/terminalrc)
 
+# flake8
+[ -e ~/.flake8 ] || ln -s ~/dotfiles/.flake8 ~/.flake8

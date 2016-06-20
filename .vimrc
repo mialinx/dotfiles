@@ -72,6 +72,8 @@
         Plugin 'majutsushi/tagbar'
     " indentLines
         Plugin 'Yggdroot/indentLine'
+    " autopairs
+        Plugin 'jiangmiao/auto-pairs'
 
 
     filetype plugin indent on     " required!
@@ -215,10 +217,7 @@
         \ endif
 
 " Типы файлов
-    au BufNewFile,BufRead *.tpl set ft=tt2
-    au BufNewFile,BufRead *.go
-        \ set ft=go |
-        \ set noexpandtab
+    au BufRead,BufNewFile *.tpl set ft=tt2
     au BufRead,BufNewFile *.html if  search('{{') > 0  || search('{%') > 0 | set filetype=htmldjango | endif
     au BufRead,BufNewFile *.tpl  set filetype=tt2html
     au BufRead,BufNewFile *.psgi set filetype=perl
@@ -226,13 +225,13 @@
     au BufRead,BufNewFile *.less set filetype=less
     au BufRead,BufNewFile *nginx*conf* set filetype=nginx
     au BufRead,BufNewFile *.wsgi set filetype=python
-    au BufNewFile,BufRead *.go   set filetype=go
-
+    au BufRead,BufNewFile *.go   set filetype=go
 
 " Кастомные биндинги
     inoremap <C-U> <C-G>u<C-U>
     nnoremap <silent> <F3> :Ack -w <cword> . <CR>
     nnoremap <silent> <F8> :Tagbar<CR>
+    noremap <F7> :GoLing<CR>
     noremap <F9> :GoBuild<CR>
     noremap <F10> :qa<CR>
     noremap <silent> <Leader>1 :b1<CR>
