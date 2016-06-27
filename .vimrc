@@ -72,9 +72,6 @@
         Plugin 'majutsushi/tagbar'
     " indentLines
         Plugin 'Yggdroot/indentLine'
-    " autopairs
-        Plugin 'jiangmiao/auto-pairs'
-
 
     filetype plugin indent on     " required!
     " Brief help
