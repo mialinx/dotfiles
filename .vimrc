@@ -61,7 +61,7 @@
         Plugin 'chase/vim-ansible-yaml'
     " Python syntax
         Plugin 'hdima/python-syntax'
-        Plugin 'nvie/vim-flake8'
+        "Plugin 'nvie/vim-flake8'
     " GoLang
         Plugin 'fatih/vim-go'
     " Git
@@ -230,7 +230,7 @@
     inoremap <C-U> <C-G>u<C-U>
     nnoremap <silent> <F3> :Ack -w <cword> . <CR>
     nnoremap <silent> <F8> :Tagbar<CR>
-    noremap <F7> :GoLing<CR>
+    noremap <F7> :SyntasticCheck<CR> :AirlineRefresh<CR> :<Esc>
     noremap <F9> :GoBuild<CR>
     noremap <F10> :qa<CR>
     noremap <silent> <Leader>1 :b1<CR>
@@ -348,12 +348,15 @@
         let python_highlight_all=1
 
     " syntastic
-        set statusline+=%#warningmsg#
-        set statusline+=%{SyntasticStatuslineFlag()}
-        set statusline+=%*
-
+        let g:syntastic_mode_map = { "mode": "active" }
         let g:syntastic_always_populate_loc_list = 1
         let g:syntastic_auto_loc_list = 1
-        let g:syntastic_check_on_open = 0
-        let g:syntastic_check_on_wq = 0
-        let g:syntastic_check_on_w = 0
+        let g:syntastic_check_on_open = 1
+        let g:syntastic_check_on_wq = 1
+        let g:syntastic_error_symbol = 'E>'
+        let g:syntastic_warning_symbol = 'W>'
+        let g:syntastic_style_error_symbol = 'e>'
+        let g:syntastic_style_warning_symbol = 'w>'
+        let g:syntastic_echo_current_error = 1
+        let g:syntastic_auto_jump = 1
+        let g:syntastic_loc_list_height = 7
