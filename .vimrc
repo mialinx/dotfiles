@@ -72,6 +72,8 @@
         Plugin 'majutsushi/tagbar'
     " indentLines
         Plugin 'Yggdroot/indentLine'
+    "
+        Plugin 'scrooloose/syntastic'
 
     filetype plugin indent on     " required!
     " Brief help
@@ -344,3 +346,14 @@
 
     " python-syntax
         let python_highlight_all=1
+
+    " syntastic
+        set statusline+=%#warningmsg#
+        set statusline+=%{SyntasticStatuslineFlag()}
+        set statusline+=%*
+
+        let g:syntastic_always_populate_loc_list = 1
+        let g:syntastic_auto_loc_list = 1
+        let g:syntastic_check_on_open = 0
+        let g:syntastic_check_on_wq = 0
+        let g:syntastic_check_on_w = 0
