@@ -262,6 +262,9 @@
     " ,ts fix trailing spaces
     autocmd FileType c,cpp,java,php,perl,python,go,javascript,xslate,django,css,scss,tpl,vim,sql autocmd BufWritePre <buffer> :%s/\s\+$//e
 
+    " Russiam, motherfucka, do you write it ?
+    set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.QWERTYUIOP{}ASDFGHJKL:\\«ZXCVBNM<>
+
 " Плагины
 
     " Ack
