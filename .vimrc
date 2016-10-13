@@ -72,8 +72,10 @@
         Plugin 'majutsushi/tagbar'
     " indentLines
         Plugin 'Yggdroot/indentLine'
-    "
+    " syntastic
         Plugin 'scrooloose/syntastic'
+    " unimpared
+        Plugin 'tpope/vim-unimpaired'
 
     filetype plugin indent on     " required!
     " Brief help
@@ -228,7 +230,6 @@
 
 " Кастомные биндинги
     inoremap <C-U> <C-G>u<C-U>
-    nnoremap <silent> <F3> :Ack -w <cword> . <CR>
     nnoremap <silent> <F8> :Tagbar<CR>
     noremap <F7> :SyntasticCheck<CR> :AirlineRefresh<CR> :<Esc>
     noremap <F9> :GoBuild<CR>
@@ -257,9 +258,9 @@
     " Ремапим русские символы
     " set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
     " Поиск по всем файлам
-    nnoremap <silent> <C-f> :Ack -w <cword> . <CR>
-    nnoremap <silent> <C-j> :cn<CR>
-    nnoremap <silent> <C-k> :cp<CR>
+    nnoremap <silent> <C-f> :LAck -w <cword> . <CR>
+    nnoremap <silent> <C-j> :lnext<CR>
+    nnoremap <silent> <C-k> :lprev<CR>
 
     " ,ts fix trailing spaces
     autocmd FileType c,cpp,java,php,perl,python,go,javascript,xslate,django,css,scss,tpl,vim,sql autocmd BufWritePre <buffer> :%s/\s\+$//e
@@ -351,7 +352,7 @@
         let g:syntastic_mode_map = { "mode": "active" }
         let g:syntastic_always_populate_loc_list = 1
         let g:syntastic_auto_loc_list = 1
-        let g:syntastic_check_on_open = 1
+        let g:syntastic_check_on_open = 0
         let g:syntastic_check_on_wq = 1
         let g:syntastic_error_symbol = 'E>'
         let g:syntastic_warning_symbol = 'W>'
@@ -360,3 +361,6 @@
         let g:syntastic_echo_current_error = 1
         let g:syntastic_auto_jump = 1
         let g:syntastic_loc_list_height = 7
+        let g:syntastic_javascript_checkers = ['eslint']
+        let g:syntastic_python_checkers = ['flake8']
+        let g:syntastic_go_checkers = ['govet']
