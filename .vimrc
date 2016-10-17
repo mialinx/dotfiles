@@ -349,6 +349,7 @@
         let python_highlight_all=1
 
     " syntastic
+        let g:syntastic_enable_highlighting = 0
         let g:syntastic_mode_map = { "mode": "active" }
         let g:syntastic_always_populate_loc_list = 1
         let g:syntastic_auto_loc_list = 1
@@ -359,7 +360,6 @@
         let g:syntastic_style_error_symbol = 'e>'
         let g:syntastic_style_warning_symbol = 'w>'
         let g:syntastic_echo_current_error = 1
-        let g:syntastic_auto_jump = 1
         let g:syntastic_loc_list_height = 7
         let g:syntastic_javascript_checkers = ['eslint']
         let g:syntastic_python_checkers = ['flake8']
