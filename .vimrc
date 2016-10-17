@@ -30,7 +30,7 @@
     " Real Plugins
         Plugin 'scrooloose/nerdcommenter.git'
         Plugin 'vim-scripts/bufexplorer.zip.git'
-        Plugin 'kien/ctrlp.vim.git'
+        Plugin 'ctrlpvim/ctrlp.vim.git'
         Plugin 'vim-airline/vim-airline'
         Plugin 'vim-airline/vim-airline-themes'
     " HTML/HAML
@@ -336,11 +336,11 @@
     " CtrlP
         let g:ctrlp_open_new_file = 't'
         let g:ctrlp_follow_symlinks = 2
-        let g:ctrlp_clear_cache_on_exit = 0
+        let g:ctrlp_clear_cache_on_exit = 1
         let g:ctrlp_prompt_mappings = {
-            \ 'AcceptSelection("e")': ['<c-p>'],
-            \ 'PrtSelectMove("j")':   ['<c-j>'],
-            \ 'PrtSelectMove("k")':   ['<c-k>'],
+            \ 'AcceptSelection("e")': ['<cr>'],
+            \ 'PrtSelectMove("j")':   ['<c-n>', '<c-j>'],
+            \ 'PrtSelectMove("k")':   ['<c-p>', '<c-k>'],
             \ 'PrtHistory(-1)':       ['<down>'],
             \ 'PrtHistory(1)':        ['<up>'],
             \ }
