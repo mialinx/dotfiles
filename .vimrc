@@ -364,3 +364,6 @@
         let g:syntastic_javascript_checkers = ['eslint']
         let g:syntastic_python_checkers = ['flake8']
         let g:syntastic_go_checkers = ['govet']
+        let g:syntastic_perl_checkers = ['perl']
+        let g:syntastic_enable_perl_checker = 1
+        let g:syntastic_perl_lib_path = [ './lib'  ]
