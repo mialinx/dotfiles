@@ -105,6 +105,7 @@
     set keymap=russian-jcukenwin
     set backspace=indent,eol,start
 
+    set guifont=Noto\ Mono\ 12
     set ruler
     set showcmd
     set nowrap
