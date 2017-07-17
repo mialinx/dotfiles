@@ -14,6 +14,7 @@ fi
 export PAGER=less
 export EDITOR=vim
 export TERM=xterm-256color
+export HISTCONTROL=ignorespace
 
 alias ls='ls --color=auto'
 alias ll='ls -lahd'
