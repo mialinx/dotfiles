@@ -1,4 +1,4 @@
-#!/bin/sh
+
 
 # vim 
 [ -e ~/.vim ] || ln -s ~/dotfiles/.vim ~/.vim 
@@ -9,7 +9,7 @@ if [ -d ~/.vimbundle/vundle ]
 then
     vim +PluginUpdate +quitall
 else
-    git clone git://github.com/gmarik/vundle.git  ~/.vimbundle/vundle
+    git clone https://github.com/VundleVim/Vundle.vim.git  ~/.vimbundle/vundle
     vim +PluginInstall +quitall
 fi
 

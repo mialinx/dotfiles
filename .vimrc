@@ -10,7 +10,7 @@
 
     " let Vundle manage Vundle
     " required!
-    Plugin 'git://github.com/gmarik/vundle.git'
+    Plugin 'https://github.com/VundleVim/Vundle.vim.git'
 
     " My Plugins here:
     " NOTE: comments after Plugin command are not allowed...
